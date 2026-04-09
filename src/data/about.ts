@@ -1,6 +1,6 @@
 export const ABOUT_PARAGRAPHS = [
-  "From Sicily to the world of data. With 7 years of operational management experience — where I reduced costs by 15-25% and optimized end-to-end processes — I'm building the bridge to data analysis and business intelligence roles.",
-  "My background in physics, accounting, and graphic design gives me a unique perspective: I think in systems, communicate with numbers, and design interfaces that make data understandable.",
+  "I come from operations — managing teams of 10+, negotiating with vendors, redesigning workflows that saved companies 15-25% in costs. That experience taught me to think in systems, spot inefficiencies, and make decisions backed by numbers.",
+  "I started automating my own work with Python and Excel VBA, and realized data analysis was where I could have the biggest impact. Now I build dashboards, automated pipelines, and analytical tools — not as exercises, but to solve real problems I've seen firsthand.",
 ];
 
 export type ContactLink = {
@@ -10,7 +10,7 @@ export type ContactLink = {
 };
 
 export const CONTACT_LINKS: ContactLink[] = [
-  { icon: "↗", label: "GitHub", url: "https://github.com/tuousername" },
-  { icon: "✉", label: "Email", url: "mailto:tua@email.com" },
-  { icon: "in", label: "LinkedIn", url: "https://linkedin.com/in/tuoprofilo" },
+  { icon: "↗", label: "GitHub", url: "https://github.com/raytp29-hub" },
+  { icon: "✉", label: "Email", url: "mailto:bgisp98@gmail.com" },
+  { icon: "in", label: "LinkedIn", url: "https://linkedin.com/in/biagio-spada" },
 ];

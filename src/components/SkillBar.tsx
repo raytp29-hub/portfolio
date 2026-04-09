@@ -3,31 +3,34 @@ import { useState, useEffect, useRef } from "react";
 type SkillBarProps = {
   name: string;
   level: number;
+  label: string;
   delay: number;
   isActive: boolean;
   onSelect: () => void;
+  siteVisible: boolean;
 };
 
-function SkillBar({ name, level, delay, isActive, onSelect }: SkillBarProps) {
+function SkillBar({ name, level, label, delay, isActive, onSelect, siteVisible }: SkillBarProps) {
   const [width, setWidth] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
   const [seen, setSeen] = useState(false);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const obs = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) { setSeen(true); obs.disconnect(); }
-    }, { threshold: 0.3 });
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
+  const el = ref.current;
+  if (!el) return;
+  const obs = new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) { setSeen(true); obs.disconnect(); }
+  }, { threshold: 0.3 });
+  obs.observe(el);
+  return () => obs.disconnect();
+}, []);
 
-  useEffect(() => {
-    if (!seen) return;
-    const t = setTimeout(() => setWidth(level), 200 + delay);
-    return () => clearTimeout(t);
-  }, [seen, level, delay]);
+useEffect(() => {
+  if (!seen || !siteVisible) return;
+  const t = setTimeout(() => setWidth(level), 200 + delay);
+  return () => clearTimeout(t);
+}, [seen, siteVisible, level, delay]);
+
 
   return (
     <div
@@ -52,9 +55,10 @@ function SkillBar({ name, level, delay, isActive, onSelect }: SkillBarProps) {
           {name}
         </span>
         <span style={{
-          fontFamily: "'JetBrains Mono', monospace", fontSize: 11, color: "#888",
+          fontFamily: "'JetBrains Mono', monospace", fontSize: 10,
+          color: label === "Expert" ? "#00b894" : label === "Advanced" ? "#6c5ce7" : "#888",
         }}>
-          {level}%
+          {label}
         </span>
       </div>
       <div style={{ height: 4, background: "#333", borderRadius: 2, overflow: "hidden" }}>

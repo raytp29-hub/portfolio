@@ -16,14 +16,14 @@ export const PROJECTS: Project[] = [
     tags: ["Python", "Streamlit", "Pandas"],
     context: "Modular dashboard for P&L analysis, ABC cost allocation, and revenue forecasting using weighted moving averages across 15+ simulated business scenarios.",
     results: [
-      "4-module pipeline (cleaner → analyzer → visualizer → app) reusable across datasets",
-      "Automated analysis that replaced manual spreadsheet workflows for 15+ scenarios",
-      "ABC cost allocation with visual breakdown by cost center and margin tracking",
+      "Built a reusable dashboard that automated P&L analysis across 15+ business scenarios",
+      "Replaced manual spreadsheet workflows, reducing analysis time from hours to minutes",
+      "Visual cost breakdown by department, enabling faster budget decisions",
     ],
     screenshots: [
-      "/screenshots/sc1.png",
-      "/screenshots/sc2.png",
-      "/screenshots/sc3.png",
+    "/portfolio/screenshots/sc1.png",
+    "/portfolio/screenshots/sc2.png",
+    "/portfolio/screenshots/sc3.png",
     ],
     repoUrl: "https://github.com/raytp29-hub/big-ambitions-analyzer1.0",
     demoUrl: "https://big-ambitions-analyzer1-0.onrender.com/",
@@ -34,13 +34,16 @@ export const PROJECTS: Project[] = [
     tags: ["Python", "Yelp API", "Claude API"],
     context: "Market intelligence platform that combines Yelp business data with AI-powered analysis to generate automated competitive reports for restaurant markets.",
     results: [
-      "End-to-end pipeline: data collection → cleaning → AI analysis → PDF report in < 2 min",
-      "Pricing and positioning patterns identified across 20+ competitors per area",
-      "Structured reports with competitive scoring, gap analysis, and strategic recommendations",
+      "Automated the full research process — from raw data to PDF report in under 2 minutes",
+      "Mapped pricing and positioning patterns across 20+ competitors per area",
+      "Generated actionable reports with competitive scoring and strategic recommendations",
     ],
     screenshots: [
-      "/screenshots/ci-report.png",
-      "/screenshots/ci-analysis.png",
+      "/portfolio/screenshots/rest_P.png",
+      "/portfolio/screenshots/rest_p2.png",
+      "/portfolio/screenshots/rest_pAI.png",
+      "/portfolio/screenshots/rest_pGra.png",
+      
     ],
     repoUrl: "https://github.com/raytp29-hub/restaurant-analytics-dashboard",
   },
@@ -61,8 +64,8 @@ export const PROJECTS: Project[] = [
     tags: ["CorelDRAW", "Branding", "Design System"],
     context: "Complete visual identity for the 21st Palio d'Ateneo UniCT/CUS, from concept to production across digital and print media.",
     results: [
-      "Cohesive design system: logo, color palette, AktivGrotesk typography, layout grids",
-      "Deployed across 8+ touchpoints: merchandise, banners, social media, print materials",
+      "Designed a complete brand identity from scratch — logo, colors, typography, and layout system",
+      "Applied across 8+ formats: merchandise, event banners, social media, and print materials",
     ],
   },
 ];
