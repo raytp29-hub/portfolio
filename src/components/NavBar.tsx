@@ -171,7 +171,7 @@ function NavBar({ sections, active, onSelect }: NavBarProps) {
             ))}
           </div>
               <a
-            href="/portfolio/src/assets/Biagio_Spada_Resume_CV.pdf"
+            href="/portfolio/cv/Biagio_Spada_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
               style={{
