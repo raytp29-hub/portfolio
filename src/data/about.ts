@@ -1,6 +1,6 @@
 export const ABOUT_PARAGRAPHS = [
-  "I come from operations — managing teams of 10+, negotiating with vendors, redesigning workflows that saved companies 15-25% in costs. That experience taught me to think in systems, spot inefficiencies, and make decisions backed by numbers.",
-  "I started automating my own work with Python and Excel VBA, and realized data analysis was where I could have the biggest impact. Now I build dashboards, automated pipelines, and analytical tools — not as exercises, but to solve real problems I've seen firsthand.",
+  "Data Analyst with a hands-on approach to Python, SQL, and Excel. I design automated pipelines, build interactive dashboards, and turn raw data into clear, actionable insights that support real business decisions.",
+  "My background in physics shaped how I think — breaking problems into structured, testable steps. Combined with 7 years in operations management, this gives me a practical edge: I don't just analyze data, I understand the business context behind it. I'm focused on building reliable, clear solutions for real-world problems.",
 ];
 
 export type ContactLink = {
@@ -12,5 +12,9 @@ export type ContactLink = {
 export const CONTACT_LINKS: ContactLink[] = [
   { icon: "↗", label: "GitHub", url: "https://github.com/raytp29-hub" },
   { icon: "✉", label: "Email", url: "mailto:bgisp98@gmail.com" },
-  { icon: "in", label: "LinkedIn", url: "https://linkedin.com/in/biagio-spada" },
+  {
+    icon: "in",
+    label: "LinkedIn",
+    url: "https://linkedin.com/in/biagio-spada",
+  },
 ];

@@ -70,6 +70,26 @@ function NavBar({ sections, active, onSelect }: NavBarProps) {
                 {link.icon}
               </a>
             ))}
+            <a
+            href="/portfolio/src/assets/Biagio_Spada_Resume_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: 10,
+                letterSpacing: 1.5,
+                textTransform: "uppercase",
+                padding: "6px 16px",
+                background: "#00b894",
+                color: "#1a1a1a",
+                fontWeight: 600,
+                borderRadius: 5,
+                textDecoration: "none",
+                transition: "all 0.3s",
+              }}
+            >
+                CV ↓
+          </a>
           </div>
         )}
 
@@ -150,6 +170,26 @@ function NavBar({ sections, active, onSelect }: NavBarProps) {
               </a>
             ))}
           </div>
+              <a
+            href="/portfolio/src/assets/Biagio_Spada_Resume_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: 10,
+                letterSpacing: 1.5,
+                textTransform: "uppercase",
+                padding: "6px 16px",
+                background: "#00b894",
+                color: "#1a1a1a",
+                fontWeight: 600,
+                borderRadius: 5,
+                textDecoration: "none",
+                transition: "all 0.3s",
+              }}
+            >
+                  CV ↓
+              </a>
         </div>
       )}
     </>

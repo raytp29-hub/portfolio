@@ -4,8 +4,10 @@ import { DATASETS } from "../data/dataset";
 // ── Funzioni helper ────────────────────────────────────────
 
 function gaussian(x: number, mu: number, sigma: number): number {
-  return Math.exp(-0.5 * Math.pow((x - mu) / sigma, 2))
-    / (sigma * Math.sqrt(2 * Math.PI));
+  return (
+    Math.exp(-0.5 * Math.pow((x - mu) / sigma, 2)) /
+    (sigma * Math.sqrt(2 * Math.PI))
+  );
 }
 
 function lerp(a: number, b: number, t: number): number {
@@ -15,7 +17,7 @@ function lerp(a: number, b: number, t: number): number {
 function lerpColor(
   a: [number, number, number],
   b: [number, number, number],
-  t: number
+  t: number,
 ): [number, number, number] {
   return [
     Math.round(lerp(a[0], b[0], t)),
@@ -26,9 +28,7 @@ function lerpColor(
 
 // Easing: accelera e decelera
 function easeInOut(t: number): number {
-  return t < 0.5
-    ? 2 * t * t
-    : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
 }
 
 // ── Tipo per lo state dell'animazione ──────────────────────
@@ -94,7 +94,7 @@ function GaussianHero() {
     const yToCanvas = (y: number) => h * 0.78 - y * h * 1.4;
 
     // ── Costanti animazione ─────────────
-    const HOLD_DUR = 1.3;       // secondi in pausa
+    const HOLD_DUR = 1.3; // secondi in pausa
     const TRANSITION_DUR = 2.0; // secondi di transizione
 
     // ── Draw frame ──────────────────────
@@ -186,8 +186,10 @@ function GaussianHero() {
         const x = (px - w * 0.5) / (w * 0.18);
         const y = gaussian(x, st.mu, st.sigma);
         const cy = yToCanvas(y);
-        if (first) { ctx.moveTo(px, cy); first = false; }
-        else ctx.lineTo(px, cy);
+        if (first) {
+          ctx.moveTo(px, cy);
+          first = false;
+        } else ctx.lineTo(px, cy);
       }
       ctx.strokeStyle = `rgba(${cr},${cg},${cb},0.8)`;
       ctx.lineWidth = 2.5;
@@ -235,7 +237,11 @@ function GaussianHero() {
       ctx.stroke();
       ctx.font = "10px monospace";
       ctx.fillStyle = `rgba(${cr},${cg},${cb},0.4)`;
-      ctx.fillText(`σ = ${st.sigma.toFixed(2)}`, (sigL + sigR) / 2, bracketY + 14);
+      ctx.fillText(
+        `σ = ${st.sigma.toFixed(2)}`,
+        (sigL + sigR) / 2,
+        bracketY + 14,
+      );
 
       // ── Dataset label (alto destra) ──
       ctx.font = "500 13px monospace";

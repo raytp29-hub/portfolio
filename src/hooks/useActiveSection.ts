@@ -18,7 +18,7 @@ function useActiveSection(sectionIds: string[]): string {
       {
         threshold: [0.3, 0.5, 0.7],
         rootMargin: "-80px 0px 0px 0px", // compensa la navbar fissa
-      }
+      },
     );
 
     sectionIds.forEach((id) => {

@@ -23,12 +23,25 @@ function ZshTerminal({ onComplete }: ZshTerminalProps) {
       { d: 700, type: "blank" },
       { d: 850, type: "ascii" },
       { d: 1200, type: "info", text: "  runtime  React 19 · Canvas · Vite 6" },
-      { d: 1450, type: "info", text: "  target   production · gzip · tree-shaken" },
+      {
+        d: 1450,
+        type: "info",
+        text: "  target   production · gzip · tree-shaken",
+      },
       { d: 1700, type: "blank" },
-      { d: 1900, type: "step", text: "▶ Installing dependencies…", bar: "deps" },
+      {
+        d: 1900,
+        type: "step",
+        text: "▶ Installing dependencies…",
+        bar: "deps",
+      },
       { d: 2800, type: "done", text: "  ✔ 12 packages installed" },
       { d: 3050, type: "step", text: "▶ Compiling modules…", bar: "mod" },
-      { d: 3900, type: "done", text: "  ✔ GaussianEngine · ProjectCards · SkillBars" },
+      {
+        d: 3900,
+        type: "done",
+        text: "  ✔ GaussianEngine · ProjectCards · SkillBars",
+      },
       { d: 4150, type: "step", text: "▶ Loading assets…", bar: "assets" },
       { d: 4900, type: "done", text: "  ✔ 4 projects · 6 skills · ready" },
       { d: 5200, type: "blank" },
@@ -42,7 +55,7 @@ function ZshTerminal({ onComplete }: ZshTerminalProps) {
         setTimeout(() => {
           setLines((prev) => [...prev, item]);
           if (item.bar) animateBar(item.bar);
-        }, item.d)
+        }, item.d),
       );
     });
 
@@ -256,9 +269,30 @@ function ZshTerminal({ onComplete }: ZshTerminalProps) {
             borderBottom: "1px solid #333",
           }}
         >
-          <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#ff5f57" }} />
-          <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#febc2e" }} />
-          <div style={{ width: 12, height: 12, borderRadius: "50%", background: "#28c840" }} />
+          <div
+            style={{
+              width: 12,
+              height: 12,
+              borderRadius: "50%",
+              background: "#ff5f57",
+            }}
+          />
+          <div
+            style={{
+              width: 12,
+              height: 12,
+              borderRadius: "50%",
+              background: "#febc2e",
+            }}
+          />
+          <div
+            style={{
+              width: 12,
+              height: 12,
+              borderRadius: "50%",
+              background: "#28c840",
+            }}
+          />
           <span
             style={{
               fontFamily: "'DM Sans', sans-serif",

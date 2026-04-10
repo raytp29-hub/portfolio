@@ -13,22 +13,27 @@ function About({ paragraphs, links }: AboutProps) {
   return (
     <div>
       {paragraphs.map((text, i) => (
-        <p key={i} style={{
-          fontSize: 15,
-          lineHeight: 1.9,
-          color: "#888",
-          marginBottom: 18,
-        }}>
+        <p
+          key={i}
+          style={{
+            fontSize: 15,
+            lineHeight: 1.9,
+            color: "#888",
+            marginBottom: 18,
+          }}
+        >
           {text}
         </p>
       ))}
 
-      <div style={{
-        display: "flex",
-        gap: 16,
-        flexWrap: "wrap",
-        marginTop: 40,
-      }}>
+      <div
+        style={{
+          display: "flex",
+          gap: 16,
+          flexWrap: "wrap",
+          marginTop: 40,
+        }}
+      >
         {links.map((link) => (
           <a
             key={link.label}
