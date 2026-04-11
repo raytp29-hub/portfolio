@@ -62,7 +62,7 @@ function HomePage() {
         style={{
           opacity: visible ? 1 : 0,
           transform: visible ? "translateY(0)" : "translateY(16px)",
-          transition: "opacity 0.9s ease 0.15s, transform 0.9s ease 0.15s",
+          transition: "opacity 1.2s cubic-bezier(0.4,0,0.2,1), transform 1.2s cubic-bezier(0.4,0,0.2,1)",
         }}
       >
         <NavBar sections={sezioni} active={active} onSelect={scrollTo} />

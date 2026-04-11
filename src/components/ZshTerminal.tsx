@@ -16,36 +16,38 @@ function ZshTerminal({ onComplete }: ZshTerminalProps) {
   const [lines, setLines] = useState<Line[]>([]);
   const [bars, setBars] = useState<Record<string, number>>({});
   const [dissolving, setDissolving] = useState(false);
+  const t = (ms: number) => ms * 0.45;
+  const SPEED = 0.42
 
   useEffect(() => {
     const seq: Line[] = [
-      { d: 200, type: "prompt", cmd: "biagio --init portfolio" },
-      { d: 700, type: "blank" },
-      { d: 850, type: "ascii" },
-      { d: 1200, type: "info", text: "  runtime  React 19 · Canvas · Vite 6" },
+      { d: t(200), type: "prompt", cmd: "biagio --init portfolio" },
+      { d: t(700), type: "blank" },
+      { d: t(850), type: "ascii" },
+      { d: t(1200), type: "info", text: "  runtime  React 19 · Canvas · Vite 6" },
       {
-        d: 1450,
+        d: t(1450),
         type: "info",
         text: "  target   production · gzip · tree-shaken",
       },
-      { d: 1700, type: "blank" },
+      { d: t(1700), type: "blank" },
       {
-        d: 1900,
+        d: t(1900),
         type: "step",
         text: "▶ Installing dependencies…",
         bar: "deps",
       },
-      { d: 2800, type: "done", text: "  ✔ 12 packages installed" },
-      { d: 3050, type: "step", text: "▶ Compiling modules…", bar: "mod" },
+      { d: t(2800), type: "done", text: "  ✔ 12 packages installed" },
+      { d: t(3050), type: "step", text: "▶ Compiling modules…", bar: "mod" },
       {
-        d: 3900,
+        d: t(3900),
         type: "done",
         text: "  ✔ GaussianEngine · ProjectCards · SkillBars",
       },
-      { d: 4150, type: "step", text: "▶ Loading assets…", bar: "assets" },
-      { d: 4900, type: "done", text: "  ✔ 4 projects · 6 skills · ready" },
-      { d: 5200, type: "blank" },
-      { d: 5400, type: "prompt", cmd: "launch --mode=interactive" },
+      { d: t(4150), type: "step", text: "▶ Loading assets…", bar: "assets" },
+      { d: t(4900), type: "done", text: "  ✔ 4 projects · 6 skills · ready" },
+      { d: t(5200), type: "blank" },
+      { d: t(5400), type: "prompt", cmd: "launch --mode=interactive" },
     ];
 
     const timers: ReturnType<typeof setTimeout>[] = [];
@@ -59,8 +61,8 @@ function ZshTerminal({ onComplete }: ZshTerminalProps) {
       );
     });
 
-    timers.push(setTimeout(() => setDissolving(true), 5900));
-    timers.push(setTimeout(() => onComplete(), 6700));
+    timers.push(setTimeout(() => setDissolving(true), t(5900)));
+    timers.push(setTimeout(() => onComplete(), t(7200)));
 
     return () => timers.forEach(clearTimeout);
   }, [onComplete]);
@@ -68,13 +70,13 @@ function ZshTerminal({ onComplete }: ZshTerminalProps) {
   const animateBar = (id: string) => {
     let progress = 0;
     const interval = setInterval(() => {
-      progress += Math.random() * 25 + 10;
+      progress += Math.random() * 20 + 8;
       if (progress >= 100) {
         progress = 100;
         clearInterval(interval);
       }
       setBars((prev) => ({ ...prev, [id]: Math.min(progress, 100) }));
-    }, 60);
+    }, 40);
   };
 
   const renderLine = (line: Line, i: number) => {
