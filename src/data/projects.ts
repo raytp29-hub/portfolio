@@ -27,7 +27,7 @@ export const PROJECTS: Project[] = [
       "/portfolio/screenshots/sc3.png",
     ],
     repoUrl: "https://github.com/raytp29-hub/big-ambitions-analyzer1.0",
-    demoUrl: "https://big-ambitions-analyzer1-0.onrender.com/",
+    demoUrl: "https://raytp29-big-ambitions-analyzer.hf.space",
   },
   {
     slug: "competitive-intelligence",

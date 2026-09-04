@@ -17,7 +17,7 @@ function ZshTerminal({ onComplete }: ZshTerminalProps) {
   const [bars, setBars] = useState<Record<string, number>>({});
   const [dissolving, setDissolving] = useState(false);
   const t = (ms: number) => ms * 0.45;
-  const SPEED = 0.42
+  
 
   useEffect(() => {
     const seq: Line[] = [

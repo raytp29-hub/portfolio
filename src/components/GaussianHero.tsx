@@ -140,22 +140,22 @@ function GaussianHero() {
         const cx = xToCanvas(gx);
         ctx.beginPath();
         ctx.moveTo(cx, h * 0.15);
-        ctx.lineTo(cx, h * 0.82);
+        ctx.lineTo(cx, h * 0.8);
         ctx.stroke();
       }
       for (let gy = 0; gy < 5; gy++) {
         const cy = h * 0.78 - gy * h * 0.13;
         ctx.beginPath();
-        ctx.moveTo(w * 0.1, cy);
-        ctx.lineTo(w * 0.9, cy);
+        ctx.moveTo(w * 0.02, cy);
+        ctx.lineTo(w * 0.98, cy);
         ctx.stroke();
       }
 
       // ── Asse X ──
       ctx.strokeStyle = "rgba(255,255,255,0.08)";
       ctx.beginPath();
-      ctx.moveTo(w * 0.08, h * 0.78);
-      ctx.lineTo(w * 0.92, h * 0.78);
+      ctx.moveTo(w * 0.02, h * 0.78);
+      ctx.lineTo(w * 0.98, h * 0.78);
       ctx.stroke();
 
       // ── Label asse X ──
@@ -168,9 +168,9 @@ function GaussianHero() {
 
       // ── Mini istogramma sotto la curva ──
       const barCount = 30;
-      const barW = (w * 0.8) / barCount;
+      const barW = (w * 0.96) / barCount;
       for (let i = 0; i < barCount; i++) {
-        const bx = w * 0.1 + i * barW;
+        const bx = w * 0.02 + i * barW;
         const x = (bx - w * 0.5) / (w * 0.18);
         const peak = gaussian(st.mu, st.mu, st.sigma);
         const intensity = peak > 0 ? gaussian(x, st.mu, st.sigma) / peak : 0;
@@ -182,7 +182,7 @@ function GaussianHero() {
       // ── Curva gaussiana ──
       ctx.beginPath();
       let first = true;
-      for (let px = w * 0.05; px <= w * 0.95; px += 1.5) {
+      for (let px = 0; px <= w; px += 1.5) {
         const x = (px - w * 0.5) / (w * 0.18);
         const y = gaussian(x, st.mu, st.sigma);
         const cy = yToCanvas(y);
@@ -196,8 +196,8 @@ function GaussianHero() {
       ctx.stroke();
 
       // ── Area riempita sotto la curva ──
-      ctx.lineTo(w * 0.95, h * 0.78);
-      ctx.lineTo(w * 0.05, h * 0.78);
+      ctx.lineTo(w, h * 0.78);
+      ctx.lineTo(w, h * 0.78);
       ctx.closePath();
       const grad = ctx.createLinearGradient(0, h * 0.2, 0, h * 0.78);
       grad.addColorStop(0, `rgba(${cr},${cg},${cb},0.12)`);
@@ -247,7 +247,7 @@ function GaussianHero() {
       ctx.font = "500 13px monospace";
       ctx.fillStyle = `rgba(${cr},${cg},${cb},0.5)`;
       ctx.textAlign = "right";
-      ctx.fillText(`analyzing: ${st.label}`, w * 0.9, h * 0.12);
+      ctx.fillText(`analyzing: ${st.label}`, w * 0.98, h * 0.12);
     };
 
     // ── Animation loop ──────────────────
