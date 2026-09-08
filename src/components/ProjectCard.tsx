@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { type Project } from "../data/projects";
 
 type ProjectCardProps = {
@@ -301,7 +302,7 @@ function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       {/* Demo Modal */}
-      {showDemo && project.demoUrl && (
+      {showDemo && project.demoUrl && createPortal(
         <div
           onClick={() => setShowDemo(false)}
           style={{
@@ -310,8 +311,10 @@ function ProjectCard({ project }: ProjectCardProps) {
             zIndex: 9999,
             background: "rgba(0,0,0,0.85)",
             display: "flex",
-            alignItems: "center",
+            alignItems: "flex-start",
             justifyContent: "center",
+            padding: "24px 0",
+            overflowY: "auto",
             backdropFilter: "blur(8px)",
           }}
         >
@@ -401,7 +404,8 @@ function ProjectCard({ project }: ProjectCardProps) {
               title={`${project.title} demo`}
             />
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

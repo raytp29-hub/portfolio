@@ -258,6 +258,7 @@ function HomePage() {
               style={{
                 position: isMobile ? "relative" : "sticky",
                 top: isMobile ? undefined : 100,
+                minHeight: isMobile ? undefined : 520,
               }}
             >
               <div
