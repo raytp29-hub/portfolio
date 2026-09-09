@@ -1,3 +1,4 @@
+
 type FooterProps = {
   name: string;
   year: number;

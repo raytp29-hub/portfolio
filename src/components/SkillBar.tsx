@@ -84,7 +84,7 @@ function SkillBar({
               label === "Expert"
                 ? "#00b894"
                 : label === "Advanced"
-                  ? "#6c5ce7"
+                  ? "#00d4aa"
                   : "#888",
           }}
         >
@@ -105,7 +105,7 @@ function SkillBar({
             width: `${width}%`,
             background: isActive
               ? "linear-gradient(90deg, #00b894, #00d4aa)"
-              : "linear-gradient(90deg, #6c5ce7, #00b894)",
+              : "linear-gradient(90deg, #00b894, #2d6d5f)",
             borderRadius: 2,
             transition:
               "width 1.2s cubic-bezier(.25,.46,.45,.94), background 0.3s",

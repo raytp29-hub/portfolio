@@ -9,13 +9,14 @@ import SkillBar from "../components/SkillBar";
 import GaussianHero from "../components/GaussianHero";
 import SectionHeader from "../components/SectionHeader";
 import About from "../components/About";
+import Timeline from "../components/Timeline";
 import useIsMobile from "../hooks/useIsMobile";
 import { PROJECTS } from "../data/projects";
 import { SKILLS } from "../data/skills";
 import { ABOUT_PARAGRAPHS, CONTACT_LINKS } from "../data/about";
 
 function HomePage() {
-  const sezioni = ["home", "projects", "skills", "about"];
+  const sezioni = ["home", "projects", "skills", "career", "about"];
   const active = useActiveSection(sezioni);
   const [activeSkill, setActiveSkill] = useState(0);
   const paused = useRef(false);
@@ -182,6 +183,43 @@ function HomePage() {
                 About Me
               </button>
             </div>
+
+            {/* Availability badge */}
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 10,
+                marginTop: 28,
+                padding: "8px 16px",
+                background: "rgba(0,184,148,0.08)",
+                border: "1px solid rgba(0,184,148,0.22)",
+                borderRadius: 24,
+              }}
+            >
+              <span
+                style={{
+                  width: 8,
+                  height: 8,
+                  borderRadius: "50%",
+                  background: "#00b894",
+                  boxShadow: "0 0 8px rgba(0,184,148,0.7)",
+                  animation: "pulseDot 2s ease-in-out infinite",
+                }}
+              />
+              <span
+                style={{
+                  fontFamily: "monospace",
+                  fontSize: 10,
+                  letterSpacing: 1.5,
+                  textTransform: "uppercase",
+                  color: "#00b894",
+                  fontWeight: 500,
+                }}
+              >
+                Available for new opportunities
+              </span>
+            </div>
           </div>
           <div
             style={{
@@ -205,7 +243,7 @@ function HomePage() {
             margin: "0 auto",
           }}
         >
-          <SectionHeader label="Portfolio" title="Selected Projects" />
+          <SectionHeader id="01" title="Selected Projects" filename="// PROJECTS.JSON" />
           <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
             {PROJECTS.map((project) => (
               <ProjectCard key={project.slug} project={project} />
@@ -222,7 +260,7 @@ function HomePage() {
             margin: "0 auto",
           }}
         >
-          <SectionHeader label="Skills" title="Stack & Tools" />
+          <SectionHeader id="02" title="Stack & Tools" filename="// SKILLS.YML" />
           <div
             style={{
               display: "grid",
@@ -273,6 +311,19 @@ function HomePage() {
           </div>
         </section>
 
+        {/* Career / Timeline */}
+        <section
+          id="career"
+          style={{
+            padding: isMobile ? "60px 20px" : "80px 48px",
+            maxWidth: 1080,
+            margin: "0 auto",
+          }}
+        >
+          <SectionHeader id="03" title="Career" filename="// TIMELINE.GANTT" />
+          <Timeline />
+        </section>
+
         {/* About */}
         <section
           id="about"
@@ -282,7 +333,7 @@ function HomePage() {
             margin: "0 auto",
           }}
         >
-          <SectionHeader label="About" title="Who I Am" />
+          <SectionHeader id="04" title="Who I Am" filename="// ABOUT.MD" />
           <About paragraphs={ABOUT_PARAGRAPHS} links={CONTACT_LINKS} />
         </section>
 

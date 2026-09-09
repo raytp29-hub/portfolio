@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap');
-
+/* Font unico consolidato — prima erano 2 @import con JetBrains Mono duplicato. */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
 
 * {
   margin: 0;
@@ -9,54 +8,34 @@
 }
 
 body {
-  background: #212121;
-}
-
-
-body {
   font-family: 'DM Sans', sans-serif;
   background: #212121;
   margin: 0;
 }
 
-
+/* Animazioni globali usate dai componenti */
 
 @keyframes tIn {
   from { opacity: 0; transform: translateY(3px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes cBlink {
   0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  50%      { opacity: 0; }
 }
 
 @keyframes skillFade {
   from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-
 
 @keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-
-
-@keyframes skillFade {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1);   box-shadow: 0 0 8px  rgba(0,184,148,0.7); }
+  50%      { transform: scale(1.2); box-shadow: 0 0 14px rgba(0,184,148,0.9); }
 }
