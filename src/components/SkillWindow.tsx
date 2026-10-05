@@ -96,7 +96,7 @@ function PythonWindow() {
           <span style={{ color: tx }}>,</span>
         </div>
         <div style={{ paddingLeft: 16 }}>
-          <span style={{ color: str }}>"Streamlit"</span>
+          <span style={{ color: str }}>"scikit-learn"</span>
           <span style={{ color: tx }}>: </span>
           <span style={{ color: str }}>"familiar"</span>
           <span style={{ color: tx }}>,</span>
