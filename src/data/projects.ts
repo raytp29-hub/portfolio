@@ -51,7 +51,7 @@ export const PROJECTS: Project[] = [
       "Analyzed 2,599 menu items across 30 restaurants, exposing the $$$$ premium tier as largely cosmetic (€13.21 vs €13.05 avg. dish price)",
     ],
     repoUrl: "https://github.com/raytp29-hub/restaurant_anlysis.git",
-    demoUrl: "https://app.powerbi.com/view?r=eyJrIjoiZTk1MWE5NjUtMGVmMS00NjU4LTg0ZmEtYTQ4NWExMGJmNWZhIiwidCI6Ijc0NTkwNTUzLTkzMjYtNDE4Yi04MDA2LTI4ODQzNjhjYTNmMiJ9&pageName=3bfe2ebd104db06a54a6",
+    demoUrl: "https://app.powerbi.com/view?r=eyJrIjoiZTk1MWE5NjUtMGVmMS00NjU4LTg0ZmEtYTQ4NWExMGJmNWZhIiwidCI6Ijc0NTkwNTUzLTkzMjYtNDE4Yi04MDA2LTI4ODQzNjhjYTNmMiJ9",
     id: "P-001",
     year: "2025",
     
